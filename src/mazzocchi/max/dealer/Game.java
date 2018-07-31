@@ -80,7 +80,13 @@ public class Game {
 
     pause();
 
+    // River
+    deck.draw();
+    table.add(deck.draw());
+    System.out.println("River: ");
+    System.out.println(table);
 
+    pause();
   }
 
   private static void pause() {

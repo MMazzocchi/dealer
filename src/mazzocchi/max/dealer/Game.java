@@ -39,6 +39,7 @@ public class Game {
       dealer_str = "You are";
     }
     System.out.println(dealer_str+" the dealer.");
+    System.out.println("");
 
     // Deal the first two cards
     int next_player = (dealer_index + 1) % number_of_players;
@@ -50,6 +51,9 @@ public class Game {
         next_player = (next_player + 1) % number_of_players;
       }
     }
+
+    System.out.println("Your hand:");
+    System.out.println(user.hand());
   }
 
   public static void main(String[] args) {

@@ -1,0 +1,32 @@
+<project name="Poker" default="dist" basedir=".">
+  <property name="src.dir" value="src"/>
+  <property name="build.dir" value="build"/>
+  <property name="dist.dir" value="dist"/>
+  <property name="main.class" value="mazzocchi.max.dealer.Game"/>
+  <property name="jar.name" value="${ant.project.name}.jar"/>
+  <property name="jar.path" value="${dist.dir}/${jar.name}"/>
+
+  <target name="build">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${build.dir}"
+           includeantruntime="false"/>
+  </target>
+
+  <target name="jar" depends="build">
+    <mkdir dir="${dist.dir}"/>
+    <jar jarfile="${jar.path}" basedir="${build.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main.class}"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="jar">
+    <java jar="${jar.path}" fork="true"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
+  </target>
+</project>

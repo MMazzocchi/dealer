@@ -21,7 +21,7 @@ public class Deck {
   };
 
   public Card draw() {
-    return cards.get(0);
+    return cards.remove(0);
   }
 
   public void shuffle() {

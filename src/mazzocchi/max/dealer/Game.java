@@ -59,6 +59,19 @@ public class Game {
     System.out.println(user.hand());
 
     pause();
+
+    // Flop
+    deck.draw();
+    Hand table = new Hand();
+    for(int i=0; i<3; i++) {
+      table.add(deck.draw());
+    }
+
+    System.out.println("Flop:");
+    System.out.println(table);
+
+    pause();
+
   }
 
   private static void pause() {

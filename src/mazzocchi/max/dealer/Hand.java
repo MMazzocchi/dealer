@@ -22,4 +22,14 @@ public class Hand {
   public void clear() {
     cards.clear();
   }
+
+  @Override
+  public String toString() {
+    String str = "";
+    for(Card card : cards) {
+      str += "  "+card+"\n";
+    }
+
+    return str;
+  }
 };

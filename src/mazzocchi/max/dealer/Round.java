@@ -1,6 +1,5 @@
 package mazzocchi.max.dealer;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -13,7 +12,7 @@ public class Round {
   private int dealer_index;
   private Hand table_hand;
 
-  public Round(List<Player> players, dealer_index) {
+  public Round(List<Player> players, int dealer_index) {
     this.players = players;
     this.number_of_players = players.size();
     this.dealer_index = dealer_index;

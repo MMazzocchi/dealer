@@ -72,6 +72,15 @@ public class Game {
 
     pause();
 
+    // Turn
+    deck.draw();
+    table.add(deck.draw());
+    System.out.println("Turn: ");
+    System.out.println(table);
+
+    pause();
+
+
   }
 
   private static void pause() {

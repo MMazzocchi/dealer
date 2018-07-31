@@ -20,6 +20,10 @@ public class Deck {
     }
   };
 
+  public Card draw() {
+    return cards.get(0);
+  }
+
   public void shuffle() {
     Collections.shuffle(cards);
   }

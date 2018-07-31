@@ -1,5 +1,6 @@
 package mazzocchi.max.dealer;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,6 +55,19 @@ public class Game {
 
     System.out.println("Your hand:");
     System.out.println(user.hand());
+
+    pause();
+  }
+
+  private static void pause() {
+    System.out.println("Press <Enter> to continue.");
+    try {
+      System.in.read();
+
+    } catch(IOException ioe) {
+      System.err.println("An error occured while waiting for user input"+
+        ioe.getMessage());
+    }
   }
 
   public static void main(String[] args) {

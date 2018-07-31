@@ -52,4 +52,8 @@ public class Round {
     deck.draw();
     table_hand.add(deck.draw());
   }
+
+  public Hand tableHand() {
+    return table_hand;
+  }
 }

@@ -23,6 +23,10 @@ public class Player {
     hand.clear();
   }
 
+  public Hand hand() {
+    return hand;
+  }
+
   @Override
   public String toString() {
     return name;

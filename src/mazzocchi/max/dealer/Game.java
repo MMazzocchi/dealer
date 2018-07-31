@@ -31,6 +31,8 @@ public class Game {
     deck.shuffle();
 
     Player user = players.get(USER_INDEX);
+    System.out.println("==================== NEW ROUND ====================");
+    System.out.println("");
     System.out.println("You are "+user);
     System.out.println("There are "+number_of_players+" players total.");
     System.out.println("");

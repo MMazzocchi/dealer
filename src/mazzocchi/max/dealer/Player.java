@@ -1,3 +1,5 @@
+package mazzocchi.max.dealer;
+
 public class Player {
   private static int next_id = 0;
 

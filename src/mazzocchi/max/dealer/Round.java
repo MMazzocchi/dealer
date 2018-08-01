@@ -21,6 +21,10 @@ public class Round {
     deck.shuffle();
 
     this.table_hand = new Hand();
+
+    for(Player player : players) {
+      player.clearHand();
+    }
   }
 
   public void deal() {

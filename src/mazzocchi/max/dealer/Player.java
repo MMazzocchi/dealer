@@ -2,6 +2,9 @@ package mazzocchi.max.dealer;
 
 import mazzocchi.max.dealer.deck.Card;
 
+/**
+ * Represents a player in the poker game.
+ */
 public class Player {
   private static int next_id = 0;
 

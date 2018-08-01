@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 import mazzocchi.max.dealer.deck.Card;
 
+/**
+ * Represents a hand of cards.
+ */
 public class Hand {
 
   private static final int MAX_HAND_SIZE = 5;

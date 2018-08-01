@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Game represents the top-level class for the Dealer package. As a class, it
+ * represents a set of players playing multiple rounds of poker.
+ */
 public class Game {
 
   private static final int DEFAULT_NUMBER_OF_PLAYERS = 8;
@@ -23,6 +27,10 @@ public class Game {
     }
   }
 
+  /**
+   * Start a round of poker. This method will proceed through the dealing, flop,
+   * turn, and river phases, pausing between each.
+   */
   public void playRound() {
     Player user = players.get(USER_INDEX);
     System.out.println("==================== NEW ROUND ====================");
@@ -76,6 +84,9 @@ public class Game {
     dealer_index = (dealer_index + 1) % number_of_players;
   }
 
+  /**
+   * Print a message and block until the user presses Enter.
+   */
   private static void pause() {
     System.out.println("Press <Enter> to continue.");
     try {
@@ -87,8 +98,13 @@ public class Game {
     }
   }
 
+  /**
+   * Start a new Game with the default number of players, and play rounds
+   * infinitely until interuptted.
+   */
   public static void main(String[] args) {
     Game game = new Game(DEFAULT_NUMBER_OF_PLAYERS);
+
     while(true) {
       game.playRound();
     }

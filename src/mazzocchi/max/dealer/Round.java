@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 import mazzocchi.max.dealer.deck.Deck;
 
+/**
+ * Represents a single round of poker play, including deal, flop, turn, and
+ * river.
+ */
 public class Round {
   private List<Player> players;
   private int number_of_players;
@@ -12,6 +16,10 @@ public class Round {
   private int dealer_index;
   private Hand table_hand;
 
+  /**
+   * Construct a new round with the players given. The dealer is specified by
+   * the dealer_index parameter.
+   */
   public Round(List<Player> players, int dealer_index) {
     this.players = players;
     this.number_of_players = players.size();
@@ -27,6 +35,9 @@ public class Round {
     }
   }
 
+  /**
+   * Deal two cards to each player.
+   */
   public void deal() {
     int next_player = (dealer_index + 1) % number_of_players;
 
@@ -40,6 +51,9 @@ public class Round {
     }
   }
 
+  /**
+   * Burn a card, and deal three cards to the table.
+   */
   public void flop() {
     deck.draw();
     for(int i=0; i<3; i++) {
@@ -47,11 +61,17 @@ public class Round {
     }
   }
 
+  /**
+   * Burn a card, and deal one card to the table.
+   */
   public void turn() {
     deck.draw();
     table_hand.add(deck.draw());
   }
 
+  /**
+   * Burn a card, and deal one card to the table.
+   */
   public void river() {
     deck.draw();
     table_hand.add(deck.draw());

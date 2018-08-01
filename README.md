@@ -1,5 +1,5 @@
 # Dealer
-`Dealer` is a simulation of Texas Hold 'Em game. Upon running, an eight-person
+`Dealer` is a simulation of a Texas Hold 'Em game. Upon running, an eight-person
 Texas Hold 'Em game will be dealt, with game status printed to the screen.
 
 Example execution:

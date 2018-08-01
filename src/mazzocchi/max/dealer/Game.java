@@ -23,7 +23,7 @@ public class Game {
 
     this.players = new ArrayList<Player>(number_of_players);
     for(int i=0; i<number_of_players; i++) {
-      this.players.add(new Player());
+      this.players.add(new Player("Player #"+i));
     }
   }
 

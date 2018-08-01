@@ -9,16 +9,13 @@ import mazzocchi.max.dealer.deck.Card;
  * Represents a player in the poker game.
  */
 public class Player {
-  private static int next_id = 0;
 
   private String name;
   private List<Card> hand;
 
-  public Player() {
-    name = "Player #"+next_id;
-    next_id++;
-
-    hand = new ArrayList<Card>();
+  public Player(String name) {
+    this.name = name;
+    this.hand = new ArrayList<Card>();
   }
 
   public void dealCard(Card card) {

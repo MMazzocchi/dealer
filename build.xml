@@ -1,4 +1,4 @@
-<project name="Poker" default="dist" basedir=".">
+<project name="Dealer" default="dist" basedir=".">
   <property name="src.dir" value="src"/>
   <property name="build.dir" value="build"/>
   <property name="dist.dir" value="dist"/>

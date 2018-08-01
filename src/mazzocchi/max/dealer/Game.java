@@ -60,7 +60,7 @@ public class Game {
     round.flop();
 
     System.out.println("Flop:");
-    System.out.println(round.tableHand());
+    round.printCardsOnTable();
 
     pause();
 
@@ -68,7 +68,7 @@ public class Game {
     round.turn();
 
     System.out.println("Turn: ");
-    System.out.println(round.tableHand());
+    round.printCardsOnTable();
 
     pause();
 
@@ -76,7 +76,7 @@ public class Game {
     round.river();
 
     System.out.println("River: ");
-    System.out.println(round.tableHand());
+    round.printCardsOnTable();
 
     pause();
 

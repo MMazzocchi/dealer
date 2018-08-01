@@ -28,14 +28,19 @@ Press <Enter> to continue.
 Note that the simulation is display-only; no interaction with the user is
 performed.
 
+---
+
 ## Build
 The build process is implemented using [Apache Ant](https://ant.apache.org/). To
 build, use the following command:
+
 `$ ant jar`
 
 ## Run
 Ant can be used to run as well:
+
 `$ ant run`
 
 Alternatively, the JAR file can be run directly:
+
 `$ cd dist/ && java -jar Dealer.jar`

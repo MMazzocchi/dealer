@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class Game {
 
-  private static final int DEFAULT_NUMBER_OF_PLAYERS = 8;
   private static final int USER_INDEX = 0;
 
   private List<Player> players;
@@ -94,18 +93,6 @@ public class Game {
     } catch(IOException ioe) {
       System.err.println("An error occured while waiting for user input"+
         ioe.getMessage());
-    }
-  }
-
-  /**
-   * Start a new Game with the default number of players, and play rounds
-   * infinitely until interuptted.
-   */
-  public static void main(String[] args) {
-    Game game = new Game(DEFAULT_NUMBER_OF_PLAYERS);
-
-    while(true) {
-      game.playRound();
     }
   }
 }

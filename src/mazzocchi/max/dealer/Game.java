@@ -24,7 +24,6 @@ public class Game {
   }
 
   public void playRound() {
-
     Player user = players.get(USER_INDEX);
     System.out.println("==================== NEW ROUND ====================");
     System.out.println("");
@@ -74,6 +73,7 @@ public class Game {
     pause();
 
     // Complete round
+    dealer_index = (dealer_index + 1) % number_of_players;
   }
 
   private static void pause() {
@@ -89,6 +89,8 @@ public class Game {
 
   public static void main(String[] args) {
     Game game = new Game(DEFAULT_NUMBER_OF_PLAYERS);
-    game.playRound();
+    while(true) {
+      game.playRound();
+    }
   }
 }

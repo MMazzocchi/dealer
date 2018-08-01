@@ -23,7 +23,8 @@ public class Game {
 
     this.players = new ArrayList<Player>(number_of_players);
     for(int i=0; i<number_of_players; i++) {
-      this.players.add(new Player("Player #"+i));
+      Player player = new Player("Player #"+i);
+      this.players.add(player);
     }
   }
 
@@ -35,22 +36,23 @@ public class Game {
     Player user = players.get(USER_INDEX);
     System.out.println("==================== NEW ROUND ====================");
     System.out.println("");
-    System.out.println("You are "+user);
-    System.out.println("There are "+number_of_players+" players total.");
+    System.out.println("You are "+user+".");
+    System.out.println("There are "+number_of_players+" player(s) total.");
     System.out.println("");
 
-    String dealer_str = players.get(dealer_index).toString() + " is";
     if(dealer_index == USER_INDEX) {
-      dealer_str = "You are";
+      System.out.println("You are the dealer.");
+
+    } else {
+      Player dealer = players.get(dealer_index);
+      System.out.println(dealer+" is the dealer.");
     }
-    System.out.println(dealer_str+" the dealer.");
     System.out.println("");
 
     Round round = new Round(players, dealer_index);
 
     // Initial deal
     round.deal();
-
     System.out.println("Your hand:");
     user.printHand();
 
@@ -58,7 +60,6 @@ public class Game {
 
     // Flop
     round.flop();
-
     System.out.println("Flop:");
     round.printCardsOnTable();
 
@@ -66,7 +67,6 @@ public class Game {
 
     // Turn
     round.turn();
-
     System.out.println("Turn: ");
     round.printCardsOnTable();
 
@@ -74,13 +74,12 @@ public class Game {
 
     // River
     round.river();
-
     System.out.println("River: ");
     round.printCardsOnTable();
 
     pause();
 
-    // Complete round
+    // Rotate the dealer 
     dealer_index = (dealer_index + 1) % number_of_players;
   }
 

@@ -29,8 +29,10 @@ public class Player {
     hand.clear();
   }
 
-  public List<Card> hand() {
-    return hand;
+  public void printHand() {
+    for(Card card : hand) {
+      System.out.println("  "+card);
+    }
   }
 
   @Override

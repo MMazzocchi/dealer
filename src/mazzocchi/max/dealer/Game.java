@@ -52,7 +52,7 @@ public class Game {
     round.deal();
 
     System.out.println("Your hand:");
-    System.out.println(user.hand());
+    user.printHand();
 
     pause();
 

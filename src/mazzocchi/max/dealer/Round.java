@@ -3,6 +3,7 @@ package mazzocchi.max.dealer;
 import java.util.List;
 import java.util.ArrayList;
 
+import mazzocchi.max.dealer.deck.Card;
 import mazzocchi.max.dealer.deck.Deck;
 
 /**
@@ -10,11 +11,18 @@ import mazzocchi.max.dealer.deck.Deck;
  * river.
  */
 public class Round {
+
+  private static final int FLOP_COUNT = 3;
+  private static final int TURN_COUNT = 1;
+  private static final int RIVER_COUNT = 1;
+  private static final int MAX_CARDS_ON_TABLE = FLOP_COUNT + TURN_COUNT +
+    RIVER_COUNT;
+
   private List<Player> players;
   private int number_of_players;
   private Deck deck;
   private int dealer_index;
-  private Hand table_hand;
+  private List<Card> cards_on_table;
 
   /**
    * Construct a new round with the players given. The dealer is specified by
@@ -28,7 +36,7 @@ public class Round {
     this.deck = new Deck();
     deck.shuffle();
 
-    this.table_hand = new Hand();
+    this.cards_on_table = new ArrayList<Card>(MAX_CARDS_ON_TABLE);
 
     for(Player player : players) {
       player.clearHand();
@@ -57,7 +65,7 @@ public class Round {
   public void flop() {
     deck.draw();
     for(int i=0; i<3; i++) {
-      table_hand.add(deck.draw());
+      cards_on_table.add(deck.draw());
     }
   }
 
@@ -66,7 +74,7 @@ public class Round {
    */
   public void turn() {
     deck.draw();
-    table_hand.add(deck.draw());
+    cards_on_table.add(deck.draw());
   }
 
   /**
@@ -74,10 +82,10 @@ public class Round {
    */
   public void river() {
     deck.draw();
-    table_hand.add(deck.draw());
+    cards_on_table.add(deck.draw());
   }
 
-  public Hand tableHand() {
-    return table_hand;
+  public List<Card> tableHand() {
+    return cards_on_table;
   }
 }

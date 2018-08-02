@@ -62,7 +62,9 @@ public class Main {
 
         case DEAL:
           System.out.println("Your hand:");
-          user.printHand();
+          for(Card card : user.getHand()) {
+            System.out.println("  "+card);
+          }
           pause();
           break;
 

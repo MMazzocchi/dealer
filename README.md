@@ -5,22 +5,24 @@ Texas Hold 'Em game will be dealt, with game status printed to the screen.
 Example execution:
 ```
 $ java -jar Dealer.jar
-==================== NEW ROUND ====================
-
 You are Player #0.
 There are 8 player(s) total.
 
-You are the dealer.
+New Round:
+  You are the dealer.
 
-Your hand:
-  6 of Diamonds
-  10 of Diamonds
+Press <Enter> to continue.
+
+Deal:
+  Your hand:
+    Queen of Diamonds
+    3 of Hearts
 Press <Enter> to continue.
 
 Flop:
-  7 of Hearts
-  9 of Spades
-  8 of Spades
+  10 of Spades
+  5 of Hearts
+  8 of Clubs
 Press <Enter> to continue.
 ...
 ```

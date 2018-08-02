@@ -15,6 +15,8 @@ public class Game {
   private List<Player> players;
   private int number_of_players;
   private int dealer_index;
+  private Stage stage;
+  private Round round;
 
   public Game(int number_of_players) {
     this.number_of_players = number_of_players;
@@ -25,6 +27,8 @@ public class Game {
       Player player = new Player("Player #"+i);
       this.players.add(player);
     }
+
+    this.stage = Stage.NEW_ROUND;
   }
 
   /**
@@ -81,6 +85,43 @@ public class Game {
     // Rotate the dealer 
     dealer_index = (dealer_index + 1) % number_of_players;
   }
+
+  /**
+   * Advance to the next stage. Returns the stage that was just performed.
+   */
+  public Stage advance() {
+    Stage prev_stage = stage;
+
+    switch(stage) {
+      case NEW_ROUND:
+        round = new Round(players, dealer_index);
+        dealer_index = (dealer_index + 1) % number_of_players;
+        stage = Stage.DEAL;
+        break;
+
+      case DEAL:
+        round.deal();
+        stage = Stage.FLOP;
+        break;
+
+      case FLOP:
+        round.flop();
+        stage = Stage.TURN;
+        break;
+
+      case TURN:
+        round.turn();
+        stage = Stage.RIVER;
+        break;
+
+      case RIVER:
+        round.river();
+        stage = Stage.NEW_ROUND;
+        break;
+    }
+
+    return prev_stage;
+  };
 
   /**
    * Print a message and block until the user presses Enter.

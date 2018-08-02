@@ -20,7 +20,7 @@ public class Deck {
     }
   };
 
-  public Card draw() {
+  public final Card draw() {
     return cards.remove(0);
   }
 

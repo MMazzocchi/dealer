@@ -41,31 +41,27 @@ public class Game {
     switch(stage) {
       case NEW_ROUND:
         round = new Round(players, dealer_index);
-        stage = Stage.DEAL;
         break;
 
       case DEAL:
         round.deal();
-        stage = Stage.FLOP;
         break;
 
       case FLOP:
         round.flop();
-        stage = Stage.TURN;
         break;
 
       case TURN:
         round.turn();
-        stage = Stage.RIVER;
         break;
 
       case RIVER:
         round.river();
-        stage = Stage.NEW_ROUND;
         dealer_index = (dealer_index + 1) % number_of_players;
         break;
     }
 
+    stage = stage.next();
     return prev_stage;
   };
 

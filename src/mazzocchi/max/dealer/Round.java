@@ -64,7 +64,7 @@ public class Round {
    */
   public void flop() {
     deck.draw();
-    for(int i=0; i<3; i++) {
+    for(int i=0; i<FLOP_COUNT; i++) {
       cards_on_table.add(deck.draw());
     }
   }
@@ -74,7 +74,9 @@ public class Round {
    */
   public void turn() {
     deck.draw();
-    cards_on_table.add(deck.draw());
+    for(int i=0; i<TURN_COUNT; i++) {
+      cards_on_table.add(deck.draw());
+    }
   }
 
   /**
@@ -82,7 +84,9 @@ public class Round {
    */
   public void river() {
     deck.draw();
-    cards_on_table.add(deck.draw());
+    for(int i=0; i<RIVER_COUNT; i++) {
+      cards_on_table.add(deck.draw());
+    }
   }
 
   /**

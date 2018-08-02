@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
+import mazzocchi.max.dealer.deck.Card;
+
 /**
  * Game represents the top-level class for the Dealer package. As a class, it
  * represents a set of players playing multiple rounds of poker.
@@ -65,4 +67,8 @@ public class Game {
 
     return prev_stage;
   };
+
+  public List<Card> getCardsOnTable() {
+    return round.getCardsOnTable();
+  }
 }

@@ -89,12 +89,7 @@ public class Round {
     }
   }
 
-  /**
-   * Print the cards currently showing on the table.
-   */
-  public void printCardsOnTable() {
-    for(Card card : cards_on_table) {
-      System.out.println("  "+card);
-    }
+  public List<Card> getCardsOnTable() {
+    return cards_on_table;
   }
 }

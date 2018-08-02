@@ -2,6 +2,8 @@ package mazzocchi.max.dealer;
 
 import java.io.IOException;
 
+import mazzocchi.max.dealer.deck.Card;
+
 public class Main {
 
   private static final int DEFAULT_NUMBER_OF_PLAYERS = 8;
@@ -17,6 +19,12 @@ public class Main {
     } catch(IOException ioe) {
       System.err.println("An error occured while waiting for user input"+
         ioe.getMessage());
+    }
+  }
+
+  public static void printCardsOnTable(Game game) {
+    for(Card card : game.getCardsOnTable()) {
+      System.out.println("  "+card);
     }
   }
 
@@ -62,19 +70,19 @@ public class Main {
 
         case FLOP:
           System.out.println("Flop:");
-          //round.printCardsOnTable();
+          printCardsOnTable(game);
           pause();
           break;
 
         case TURN:
           System.out.println("Turn:");
-          //round.printCardsOnTable();
+          printCardsOnTable(game);
           pause();
           break;
 
         case RIVER:
           System.out.println("River: ");
-          //round.printCardsOnTable();
+          printCardsOnTable(game);
           pause();
           break;
       }

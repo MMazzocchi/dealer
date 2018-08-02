@@ -69,15 +69,15 @@ public class Game {
     return prev_stage;
   };
 
-  public List<Card> getCardsOnTable() {
+  public final List<Card> getCardsOnTable() {
     return round.getCardsOnTable();
   }
 
-  public Player getUser() {
+  public final Player getUser() {
     return players.get(USER_INDEX);
   }
 
-  public Player getDealer() {
+  public final Player getDealer() {
     return players.get(dealer_index);
   }
 }

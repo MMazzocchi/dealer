@@ -26,7 +26,7 @@ public class Player {
     hand.clear();
   }
 
-  public List<Card> getHand() {
+  public final List<Card> getHand() {
     return hand;
   }
 

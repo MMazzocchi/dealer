@@ -89,7 +89,7 @@ public class Round {
     }
   }
 
-  public List<Card> getCardsOnTable() {
+  public final List<Card> getCardsOnTable() {
     return cards_on_table;
   }
 }

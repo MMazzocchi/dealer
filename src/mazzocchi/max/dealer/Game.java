@@ -10,8 +10,6 @@ import java.util.ArrayList;
  */
 public class Game {
 
-  private static final int USER_INDEX = 0;
-
   private List<Player> players;
   private int number_of_players;
   private int dealer_index;

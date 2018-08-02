@@ -32,61 +32,6 @@ public class Game {
   }
 
   /**
-   * Start a round of poker. This method will proceed through the dealing, flop,
-   * turn, and river phases, pausing between each.
-   */
-  public void playRound() {
-    Player user = players.get(USER_INDEX);
-    System.out.println("==================== NEW ROUND ====================");
-    System.out.println("");
-    System.out.println("You are "+user+".");
-    System.out.println("There are "+number_of_players+" player(s) total.");
-    System.out.println("");
-
-    if(dealer_index == USER_INDEX) {
-      System.out.println("You are the dealer.");
-
-    } else {
-      Player dealer = players.get(dealer_index);
-      System.out.println(dealer+" is the dealer.");
-    }
-    System.out.println("");
-
-    Round round = new Round(players, dealer_index);
-
-    // Initial deal
-    round.deal();
-    System.out.println("Your hand:");
-    user.printHand();
-
-    pause();
-
-    // Flop
-    round.flop();
-    System.out.println("Flop:");
-    round.printCardsOnTable();
-
-    pause();
-
-    // Turn
-    round.turn();
-    System.out.println("Turn: ");
-    round.printCardsOnTable();
-
-    pause();
-
-    // River
-    round.river();
-    System.out.println("River: ");
-    round.printCardsOnTable();
-
-    pause();
-
-    // Rotate the dealer 
-    dealer_index = (dealer_index + 1) % number_of_players;
-  }
-
-  /**
    * Advance to the next stage. Returns the stage that was just performed.
    */
   public Stage advance() {
@@ -122,18 +67,4 @@ public class Game {
 
     return prev_stage;
   };
-
-  /**
-   * Print a message and block until the user presses Enter.
-   */
-  private static void pause() {
-    System.out.println("Press <Enter> to continue.");
-    try {
-      System.in.read();
-
-    } catch(IOException ioe) {
-      System.err.println("An error occured while waiting for user input"+
-        ioe.getMessage());
-    }
-  }
 }

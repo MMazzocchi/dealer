@@ -35,8 +35,11 @@ public class Main {
   public static void main(String[] args) {
     Game game = new Game(DEFAULT_NUMBER_OF_PLAYERS);
 
-    //Player user = players.get(USER_INDEX);
-    //System.out.println("You are "+user+".");
+    Player user = game.getUser();
+    System.out.println("You are "+user+".");
+    System.out.println("There are "+DEFAULT_NUMBER_OF_PLAYERS+
+      " player(s) total.");
+    System.out.println("");
 
     while(true) {
       Stage stage = game.advance();
@@ -45,26 +48,21 @@ public class Main {
         case NEW_ROUND:
           System.out.println("================== NEW ROUND ==================");
           System.out.println("");
-          System.out.println("There are "+DEFAULT_NUMBER_OF_PLAYERS+
-            " player(s) total.");
-          System.out.println("");
 
-/*
-          if(dealer_index == USER_INDEX) {
+          Player dealer = game.getDealer();
+          if(user == dealer) {
             System.out.println("You are the dealer.");
-
           } else {
-            Player dealer = players.get(dealer_index);
             System.out.println(dealer+" is the dealer.");
           }
-*/
+
           System.out.println("");
           pause();
           break;
 
         case DEAL:
           System.out.println("Your hand:");
-          //user.printHand();
+          user.printHand();
           pause();
           break;
 

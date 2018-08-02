@@ -12,6 +12,8 @@ import mazzocchi.max.dealer.deck.Card;
  */
 public class Game {
 
+  private static final int USER_INDEX = 0;
+
   private List<Player> players;
   private int number_of_players;
   private int dealer_index;
@@ -40,7 +42,6 @@ public class Game {
     switch(stage) {
       case NEW_ROUND:
         round = new Round(players, dealer_index);
-        dealer_index = (dealer_index + 1) % number_of_players;
         stage = Stage.DEAL;
         break;
 
@@ -62,6 +63,7 @@ public class Game {
       case RIVER:
         round.river();
         stage = Stage.NEW_ROUND;
+        dealer_index = (dealer_index + 1) % number_of_players;
         break;
     }
 
@@ -70,5 +72,13 @@ public class Game {
 
   public List<Card> getCardsOnTable() {
     return round.getCardsOnTable();
+  }
+
+  public Player getUser() {
+    return players.get(USER_INDEX);
+  }
+
+  public Player getDealer() {
+    return players.get(dealer_index);
   }
 }
